@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Libs.librecognition.FunctionRecognition</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Immunity Debugger API Reference</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;Libs ::
+        <a href="Libs.librecognition-module.html">Module&nbsp;librecognition</a> ::
+        Class&nbsp;FunctionRecognition
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Libs.librecognition.FunctionRecognition-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class FunctionRecognition</h1><p class="nomargin-top"><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition">source&nbsp;code</a></span></p>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">imm</span>,
+        <span class="summary-sig-arg">dictionaryfiles</span>=<span class="summary-sig-default">None</span>)</span><br />
+      This class try to recognize a function using different methods 
+      (address/signature/heuristic).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">STRING</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#resolvFunctionByAddress" class="summary-sig-name">resolvFunctionByAddress</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">heuristic</span>=<span class="summary-sig-default">90</span>)</span><br />
+      Look up into our dictionaries to find a function match.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.resolvFunctionByAddress">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">INTEGER</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#checkHeuristic" class="summary-sig-name">checkHeuristic</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">reference</span>,
+        <span class="summary-sig-arg">refFirstCall</span>=<span class="summary-sig-default">[]</span>)</span><br />
+      Check a given address with a precomputed hash of a function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.checkHeuristic">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="compareHeuristic"></a><span class="summary-sig-name">compareHeuristic</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">cfg</span>,
+        <span class="summary-sig-arg">refcfg</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.compareHeuristic">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#makeFunctionHashHeuristic" class="summary-sig-name">makeFunctionHashHeuristic</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">compressed</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">followCalls</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Consider:
+- Control Flow Graph
+- generalized instructions that:
+    access memory/write memory/use registers/use constant/call/jmp/jmc
+    and all his combinations.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.makeFunctionHashHeuristic">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UNSIGNED LONG</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#hash_a_list" class="summary-sig-name">hash_a_list</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span><br />
+      Take a list and return a binary representation of his CRC32.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.hash_a_list">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">LIST</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#searchFunctionByHeuristic" class="summary-sig-name">searchFunctionByHeuristic</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">csvline</span>,
+        <span class="summary-sig-arg">heuristic</span>=<span class="summary-sig-default">90</span>,
+        <span class="summary-sig-arg">module</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Search memory to find a function that fullfit the options.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.searchFunctionByHeuristic">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">LIST</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#_searchFunctionByHeuristic" class="summary-sig-name" onclick="show_private();">_searchFunctionByHeuristic</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">search</span>,
+        <span class="summary-sig-arg">functionhash</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">firstcallhash</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">exact</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">heuristic</span>=<span class="summary-sig-default">90</span>,
+        <span class="summary-sig-arg">module</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">firstbb</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Search memory to find a function that fullfit the options.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition._searchFunctionByHeuristic">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">LIST</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#searchFunctionByName" class="summary-sig-name">searchFunctionByName</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">heuristic</span>=<span class="summary-sig-default">90</span>,
+        <span class="summary-sig-arg">module</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">version</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Look up into our dictionaries to find a function match.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.searchFunctionByName">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">STRING</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#makeFunctionHashExact" class="summary-sig-name">makeFunctionHashExact</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>)</span><br />
+      Return a SHA-1 hash of the function, taking the raw bytes as data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.makeFunctionHashExact">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">LIST</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#makeFunctionHash" class="summary-sig-name">makeFunctionHash</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">compressed</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Return a list with the best BB to use for a search and the heuristic 
+      hash of the function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.makeFunctionHash">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="selectBasicBlock"></a><span class="summary-sig-name">selectBasicBlock</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.selectBasicBlock">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">LIST</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#generalizeFunction" class="summary-sig-name">generalizeFunction</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>)</span><br />
+      Take an address an return a generalized version of the function, 
+      dismissing address and register dependant information.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.generalizeFunction">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">STRING</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#generalizeInstruction" class="summary-sig-name">generalizeInstruction</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">inp</span>)</span><br />
+      Generalize an instruction given an address or an opCode instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.generalizeInstruction">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">DWORD|None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#findBasicBlockHeuristically" class="summary-sig-name">findBasicBlockHeuristically</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">firstbb</span>,
+        <span class="summary-sig-arg">maxsteps</span>=<span class="summary-sig-default">20</span>)</span><br />
+      Try to match a generalized BB with an address range (moving 
+      backward).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.findBasicBlockHeuristically">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">DWORD|None</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="Libs.librecognition.FunctionRecognition-class.html#findFirstBB" class="summary-sig-name">findFirstBB</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">recursive</span>=<span class="summary-sig-default">False</span>)</span><br />
+      The main idea is traverse a function backward following Xrefs until 
+      we reach a point where there's no more Xrefs other than CALLs</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.findFirstBB">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">imm</span>,
+        <span class="sig-arg">dictionaryfiles</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This class try to recognize a function using different methods 
+  (address/signature/heuristic).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>imm</code></strong> (Debbuger OBJECT) - Debbuger instance</li>
+        <li><strong class="pname"><code>dictionaryfiles</code></strong> (STRING|LIST) - Name, or list of names, of .dat files inside the Data folder, 
+          where're stored the function patterns. Use an empty string to use
+          all .dat files in Data folder.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="resolvFunctionByAddress"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">resolvFunctionByAddress</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">heuristic</span>=<span class="sig-default">90</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.resolvFunctionByAddress">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Look up into our dictionaries to find a function match.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - Address of the function to search</li>
+        <li><strong class="pname"><code>heuristic</code></strong> (INTEGER) - heuristic threasold to consider a real function match</li>
+    </ul></dd>
+    <dt>Returns: STRING</dt>
+        <dd>a STRING with the function's real name or the given address if 
+          there's no match</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="checkHeuristic"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">checkHeuristic</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">reference</span>,
+        <span class="sig-arg">refFirstCall</span>=<span class="sig-default">[]</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.checkHeuristic">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check a given address with a precomputed hash of a function. Return a 
+  percentage of match (you can use a threasold to consider a real 
+  match)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - Address of the function to compare</li>
+        <li><strong class="pname"><code>reference</code></strong> (STRING) - base64 representation of the compressed information about the 
+          function</li>
+        <li><strong class="pname"><code>refFirstCall</code></strong> (STRING) - the same, but following the function pointed by the first call in
+          the first BB. (OPTIONAL)</li>
+    </ul></dd>
+    <dt>Returns: INTEGER</dt>
+        <dd>heuristic threasold to consider a real function match</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="makeFunctionHashHeuristic"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">makeFunctionHashHeuristic</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">compressed</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">followCalls</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.makeFunctionHashHeuristic">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Consider:
+- Control Flow Graph
+- generalized instructions that:
+    access memory/write memory/use registers/use constant/call/jmp/jmc
+    and all his combinations.
+- special case of functions with just 1 BB and a couple of calls (follow the first call)
+
+@type  address: DWORD
+@param address: address of the function to hash
+
+@type  compressed: Boolean
+@param compressed: return a compressed base64 representation or the raw data
+
+@type  followCalls: Boolean
+@param followCalls: follow the first call in a single basic block function
+
+@rtype: LIST
+@return: the first element is described below and the second is the result of this same function but over the first
+         call of a single basic block function (if applies), each element is like this:
+    a base64 representation of the compressed version of each bb hash:
+    [4 bytes BB(i) start][4 bytes BB(i) 1st edge][4 bytes BB(i) 2nd edge]
+    0 &lt;= i &lt; BB count
+    or the same but like a LIST with raw data.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="hash_a_list"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hash_a_list</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.hash_a_list">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Take a list and return a binary representation of his CRC32.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (LIST) - a list of elements to make the hash</li>
+    </ul></dd>
+    <dt>Returns: UNSIGNED LONG</dt>
+        <dd>a hash of the given values</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="searchFunctionByHeuristic"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">searchFunctionByHeuristic</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">csvline</span>,
+        <span class="sig-arg">heuristic</span>=<span class="sig-default">90</span>,
+        <span class="sig-arg">module</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.searchFunctionByHeuristic">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Search memory to find a function that fullfit the options.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>csvline</code></strong> (STRING) - A line of a Data CSV file. This's a simple support for copy 'n 
+          paste from a CSV file.</li>
+        <li><strong class="pname"><code>heuristic</code></strong> (INTEGER) - heuristic threasold to consider a real function match</li>
+        <li><strong class="pname"><code>module</code></strong> (STRING) - name of a module to restrict the search</li>
+    </ul></dd>
+    <dt>Returns: LIST</dt>
+        <dd>a list of tuples with possible function's addresses and the 
+          heauristic match percentage</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_searchFunctionByHeuristic"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_searchFunctionByHeuristic</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">search</span>,
+        <span class="sig-arg">functionhash</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">firstcallhash</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">exact</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">heuristic</span>=<span class="sig-default">90</span>,
+        <span class="sig-arg">module</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">firstbb</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition._searchFunctionByHeuristic">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Search memory to find a function that fullfit the options.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>search</code></strong> (STRING) - searchCommand string to make the first selection</li>
+        <li><strong class="pname"><code>functionhash</code></strong> (STRING) - the primary function hash (use makeFunctionHash to generate this 
+          value)</li>
+        <li><strong class="pname"><code>firstcallhash</code></strong> (STRING) - the hash of the first call on single BB functions (use 
+          makeFunctionHash to generate this value)</li>
+        <li><strong class="pname"><code>exact</code></strong> (STRING) - an exact function hash, this's a binary byte-per-byte hash (use 
+          makeFunctionHash to generate this value)</li>
+        <li><strong class="pname"><code>heuristic</code></strong> (INTEGER) - heuristic threasold to consider a real function match</li>
+        <li><strong class="pname"><code>module</code></strong> (STRING) - name of a module to restrict the search</li>
+        <li><strong class="pname"><code>firstbb</code></strong> (STRING) - generalized assembler of the first BB (to search function begin)</li>
+    </ul></dd>
+    <dt>Returns: LIST</dt>
+        <dd>a list of tuples with possible function's addresses and the 
+          heauristic match percentage</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="searchFunctionByName"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">searchFunctionByName</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">heuristic</span>=<span class="sig-default">90</span>,
+        <span class="sig-arg">module</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">version</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.searchFunctionByName">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Look up into our dictionaries to find a function match.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (STRING) - Name of the function to search</li>
+        <li><strong class="pname"><code>module</code></strong> (STRING) - name of a module to restrict the search</li>
+        <li><strong class="pname"><code>version</code></strong> (STRING) - restrict the search to the given version</li>
+        <li><strong class="pname"><code>heuristic</code></strong> (INTEGER) - heuristic threasold to consider a real function match</li>
+    </ul></dd>
+    <dt>Returns: LIST</dt>
+        <dd>a list of tuples with possible function's addresses and the 
+          heauristic match percentage</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="makeFunctionHashExact"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">makeFunctionHashExact</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.makeFunctionHashExact">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a SHA-1 hash of the function, taking the raw bytes as data.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - address of the function to hash</li>
+    </ul></dd>
+    <dt>Returns: STRING</dt>
+        <dd>SHA-1 hash of the function</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="makeFunctionHash"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">makeFunctionHash</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">compressed</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.makeFunctionHash">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return a list with the best BB to use for a search and the heuristic 
+  hash of the function. This two components are the function hash.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - address of the function to hash</li>
+        <li><strong class="pname"><code>compressed</code></strong> (Boolean) - return a compressed base64 representation or the raw data</li>
+    </ul></dd>
+    <dt>Returns: LIST</dt>
+        <dd>1st element is the generalized instructions to use with 
+          searchCommand 2nd element is the heuristic function hash 
+          (makeFunctionHashHeuristic) 3rd element is an exact hash of the 
+          function (makeFunctionHashExact) 4th element is a LIST of 
+          generalized instructions of the first BB (to find the function 
+          begin)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generalizeFunction"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generalizeFunction</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.generalizeFunction">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Take an address an return a generalized version of the function, 
+  dismissing address and register dependant information.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - address to the function begin</li>
+    </ul></dd>
+    <dt>Returns: LIST</dt>
+        <dd>the 1st value is a DICTIONARY of a Control Flow Graph of the BB 
+          conexions (each BB have an arbitrary ID) the 2nd value is a 
+          DICTIONARY using this arbitrary BB ID as the key and a LIST of 
+          searchCommand suitable, generalized instructions.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generalizeInstruction"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generalizeInstruction</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">inp</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.generalizeInstruction">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generalize an instruction given an address or an opCode instance</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>inp</code></strong> (DWORD|OpCode OBJECT) - address to generalize or opcode to generalize</li>
+    </ul></dd>
+    <dt>Returns: STRING</dt>
+        <dd>a generalized assembler instruction</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="findBasicBlockHeuristically"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">findBasicBlockHeuristically</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">firstbb</span>,
+        <span class="sig-arg">maxsteps</span>=<span class="sig-default">20</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.findBasicBlockHeuristically">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Try to match a generalized BB with an address range (moving 
+  backward).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - address used to match with the generalized BB</li>
+        <li><strong class="pname"><code>firstbb</code></strong> (LIST) - a list of generalized assembler instructions</li>
+        <li><strong class="pname"><code>maxsteps</code></strong> (INTEGER) - max amount of steps to go backward looking for a BB</li>
+    </ul></dd>
+    <dt>Returns: DWORD|None</dt>
+        <dd>starting address of the BB that match with the generalized 
+          version or None if we don't find it</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="findFirstBB"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">findFirstBB</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">recursive</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="Libs.librecognition-pysrc.html#FunctionRecognition.findFirstBB">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The main idea is traverse a function backward following Xrefs until we
+  reach a point where there's no more Xrefs other than CALLs</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>address</code></strong> (DWORD) - address used find the first BB</li>
+    </ul></dd>
+    <dt>Returns: DWORD|None</dt>
+        <dd>Address of the first BB of the function or None if we don't find 
+          it</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Immunity Debugger API Reference</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Mar 17 18:43:02 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

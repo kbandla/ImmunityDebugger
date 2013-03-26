@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Libs.libevent</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Immunity Debugger API Reference</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;Libs ::
+        Module&nbsp;libevent
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="Libs.libevent-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="Libs.libevent-module.html">Module Libs.libevent</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">(c) Immunity, Inc. 2004-2007</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">U{Immunity Inc.&lt;http://www.immunityinc.com&gt;}</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable Libs.immlib.__VERSION__=Libs.immlib-module.html#__VERSION__,Variable Libs.immutils.__VERSION__=Libs.immutils-module.html#__VERSION__,Variable Libs.immvcglib.__VERSION__=Libs.immvcglib-module.html#__VERSION__,Variable Libs.internals.__VERSION__=Libs.internals-module.html#__VERSION__,Variable Libs.libanalyze.__VERSION__=Libs.libanalyze-module.html#__VERSION__,Variable Libs.libdatatype.__VERSION__=Libs.libdatatype-module.html#__VERSION__,Variable Libs.libevent.__VERSION__=Libs.libevent-module.html#__VERSION__,Variable Libs.libheap.__VERSION__=Libs.libheap-module.html#__VERSION__,Variable Libs.libhook.__VERSION__=Libs.libhook-module.html#__VERSION__,Variable Libs.librecognition.__VERSION__=Libs.librecognition-module.html#__VERSION__,Variable Libs.pelib.__VERSION__=Libs.pelib-module.html#__VERSION__"><a title="Libs.immlib.__VERSION__
+Libs.immutils.__VERSION__
+Libs.immvcglib.__VERSION__
+Libs.internals.__VERSION__
+Libs.libanalyze.__VERSION__
+Libs.libdatatype.__VERSION__
+Libs.libevent.__VERSION__
+Libs.libheap.__VERSION__
+Libs.libhook.__VERSION__
+Libs.librecognition.__VERSION__
+Libs.pelib.__VERSION__" class="py-name" href="#" onclick="return doclink('link-0', '__VERSION__', 'link-0');">__VERSION__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'1.0'</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">debugger</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="Event"></a><div id="Event-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="Event-toggle" onclick="return toggle('Event');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html">Event</a><tt class="py-op">:</tt> </tt>
+</div><div id="Event-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Event-expanded"><a name="Event.__init__"></a><div id="Event.__init__-def"><a name="L17"></a><tt class="py-lineno"> 17</tt> <a class="py-toggle" href="#" id="Event.__init__-toggle" onclick="return toggle('Event.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#__init__">__init__</a><tt class="py-op">(</tt> <tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.__init__-expanded"><a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwProcessId</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwThreadId</tt>  <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method Libs.libevent.CreateProcessEvent._GetValues()=Libs.libevent.CreateProcessEvent-class.html#_GetValues,Method Libs.libevent.CreateThreadEvent._GetValues()=Libs.libevent.CreateThreadEvent-class.html#_GetValues,Method Libs.libevent.Event._GetValues()=Libs.libevent.Event-class.html#_GetValues,Method Libs.libevent.ExceptionEvent._GetValues()=Libs.libevent.ExceptionEvent-class.html#_GetValues,Method Libs.libevent.ExitProcessEvent._GetValues()=Libs.libevent.ExitProcessEvent-class.html#_GetValues,Method Libs.libevent.ExitThreadEvent._GetValues()=Libs.libevent.ExitThreadEvent-class.html#_GetValues,Method Libs.libevent.LoadDLLEvent._GetValues()=Libs.libevent.LoadDLLEvent-class.html#_GetValues,Method Libs.libevent.OutputDebugEvent._GetValues()=Libs.libevent.OutputDebugEvent-class.html#_GetValues,Method Libs.libevent.RIPEvent._GetValues()=Libs.libevent.RIPEvent-class.html#_GetValues,Method Libs.libevent.UnloadDLLEvent._GetValues()=Libs.libevent.UnloadDLLEvent-class.html#_GetValues"><a title="Libs.libevent.CreateProcessEvent._GetValues
+Libs.libevent.CreateThreadEvent._GetValues
+Libs.libevent.Event._GetValues
+Libs.libevent.ExceptionEvent._GetValues
+Libs.libevent.ExitProcessEvent._GetValues
+Libs.libevent.ExitThreadEvent._GetValues
+Libs.libevent.LoadDLLEvent._GetValues
+Libs.libevent.OutputDebugEvent._GetValues
+Libs.libevent.RIPEvent._GetValues
+Libs.libevent.UnloadDLLEvent._GetValues" class="py-name" href="#" onclick="return doclink('link-1', '_GetValues', 'link-1');">_GetValues</a></tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">             </tt>
+<a name="Event.isCreateProcess"></a><div id="Event.isCreateProcess-def"><a name="L23"></a><tt class="py-lineno"> 23</tt> <a class="py-toggle" href="#" id="Event.isCreateProcess-toggle" onclick="return toggle('Event.isCreateProcess');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isCreateProcess">isCreateProcess</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isCreateProcess-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isCreateProcess-expanded"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">CREATE_PROCESS_DEBUG_EVENT</tt> </tt>
+</div><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="Event.isCreateThread"></a><div id="Event.isCreateThread-def"><a name="L26"></a><tt class="py-lineno"> 26</tt> <a class="py-toggle" href="#" id="Event.isCreateThread-toggle" onclick="return toggle('Event.isCreateThread');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isCreateThread">isCreateThread</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isCreateThread-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isCreateThread-expanded"><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">CREATE_THREAD_DEBUG_EVENT</tt> </tt>
+</div><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="Event.isException"></a><div id="Event.isException-def"><a name="L29"></a><tt class="py-lineno"> 29</tt> <a class="py-toggle" href="#" id="Event.isException-toggle" onclick="return toggle('Event.isException');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isException">isException</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isException-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isException-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_DEBUG_EVENT</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="Event.isExitProcess"></a><div id="Event.isExitProcess-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="Event.isExitProcess-toggle" onclick="return toggle('Event.isExitProcess');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isExitProcess">isExitProcess</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isExitProcess-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isExitProcess-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXIT_PROCESS_DEBUG_EVENT</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="Event.isExitThread"></a><div id="Event.isExitThread-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="Event.isExitThread-toggle" onclick="return toggle('Event.isExitThread');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isExitThread">isExitThread</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isExitThread-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isExitThread-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXIT_THREAD_DEBUG_EVENT</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="Event.isLoadDll"></a><div id="Event.isLoadDll-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="Event.isLoadDll-toggle" onclick="return toggle('Event.isLoadDll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isLoadDll">isLoadDll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isLoadDll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isLoadDll-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">LOAD_DLL_DEBUG_EVENT</tt> </tt>
+</div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="Event.isOutputDebugString"></a><div id="Event.isOutputDebugString-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="Event.isOutputDebugString-toggle" onclick="return toggle('Event.isOutputDebugString');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isOutputDebugString">isOutputDebugString</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isOutputDebugString-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isOutputDebugString-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">OUTPUT_DEBUG_STRING_EVENT</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="Event.isUnloadDll"></a><div id="Event.isUnloadDll-def"><a name="L44"></a><tt class="py-lineno"> 44</tt> <a class="py-toggle" href="#" id="Event.isUnloadDll-toggle" onclick="return toggle('Event.isUnloadDll');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isUnloadDll">isUnloadDll</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isUnloadDll-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isUnloadDll-expanded"><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">UNLOAD_DLL_DEBUG_EVENT</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="Event.isRipEvent"></a><div id="Event.isRipEvent-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="Event.isRipEvent-toggle" onclick="return toggle('Event.isRipEvent');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#isRipEvent">isRipEvent</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event.isRipEvent-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event.isRipEvent-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugEventCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">RIP_EVENT</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">     </tt>
+<a name="Event._GetValues"></a><div id="Event._GetValues-def"><a name="L50"></a><tt class="py-lineno"> 50</tt> <a class="py-toggle" href="#" id="Event._GetValues-toggle" onclick="return toggle('Event._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.Event-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Event._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Event._GetValues-expanded"><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt>  </tt>
+</div></div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="CreateProcessEvent"></a><div id="CreateProcessEvent-def"><a name="L53"></a><tt class="py-lineno"> 53</tt> <a class="py-toggle" href="#" id="CreateProcessEvent-toggle" onclick="return toggle('CreateProcessEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.CreateProcessEvent-class.html">CreateProcessEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CreateProcessEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CreateProcessEvent-expanded"><a name="CreateProcessEvent.__init__"></a><div id="CreateProcessEvent.__init__-def"><a name="L54"></a><tt class="py-lineno"> 54</tt> <a class="py-toggle" href="#" id="CreateProcessEvent.__init__-toggle" onclick="return toggle('CreateProcessEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.CreateProcessEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CreateProcessEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CreateProcessEvent.__init__-expanded"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt id="link-2" class="py-name" targets="Class Libs.libevent.Event=Libs.libevent.Event-class.html"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-2', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method Libs.debugtypes.Handle.__init__()=Libs.debugtypes.Handle-class.html#__init__,Method Libs.debugtypes.MemoryPage.__init__()=Libs.debugtypes.MemoryPage-class.html#__init__,Method Libs.debugtypes.Module.__init__()=Libs.debugtypes.Module-class.html#__init__,Method Libs.debugtypes.PEB.__init__()=Libs.debugtypes.PEB-class.html#__init__,Method Libs.debugtypes.Stack.__init__()=Libs.debugtypes.Stack-class.html#__init__,Method Libs.debugtypes.Symbol.__init__()=Libs.debugtypes.Symbol-class.html#__init__,Method Libs.debugtypes.Table.__init__()=Libs.debugtypes.Table-class.html#__init__,Method Libs.debugtypes.Thread.__init__()=Libs.debugtypes.Thread-class.html#__init__,Method Libs.graphclass.Draw.__init__()=Libs.graphclass.Draw-class.html#__init__,Method Libs.graphclass.Graph.__init__()=Libs.graphclass.Graph-class.html#__init__,Method Libs.graphclass.Line.__init__()=Libs.graphclass.Line-class.html#__init__,Method Libs.graphclass.Vertex.__init__()=Libs.graphclass.Vertex-class.html#__init__,Method Libs.graphclass.vcgNode.__init__()=Libs.graphclass.vcgNode-class.html#__init__,Method Libs.immlib.Debugger.__init__()=Libs.immlib.Debugger-class.html#__init__,Method Libs.immlib.DictTypes.__init__()=Libs.immlib.DictTypes-class.html#__init__,Method Libs.immlib.HookOutput.__init__()=Libs.immlib.HookOutput-class.html#__init__,Method Libs.immlib.StderrToLog.__init__()=Libs.immlib.StderrToLog-class.html#__init__,Method Libs.immlib.StdoutToLog.__init__()=Libs.immlib.StdoutToLog-class.html#__init__,Method Libs.immutils.antifloatdict.__init__()=Libs.immutils.antifloatdict-class.html#__init__,Method Libs.immvcglib.ParseVCGList.__init__()=Libs.immvcglib.ParseVCGList-class.html#__init__,Method Libs.immvcglib.graphTree.__init__()=Libs.immvcglib.graphTree-class.html#__init__,Method Libs.libanalyze.BasicBlock.__init__()=Libs.libanalyze.BasicBlock-class.html#__init__,Method Libs.libanalyze.Decode.__init__()=Libs.libanalyze.Decode-class.html#__init__,Method Libs.libanalyze.Function.__init__()=Libs.libanalyze.Function-class.html#__init__,Method Libs.libanalyze.JMCBasicBlock.__init__()=Libs.libanalyze.JMCBasicBlock-class.html#__init__,Method Libs.libanalyze.JMPBasicBlock.__init__()=Libs.libanalyze.JMPBasicBlock-class.html#__init__,Method Libs.libanalyze.RETBasicBlock.__init__()=Libs.libanalyze.RETBasicBlock-class.html#__init__,Method Libs.libanalyze.TraceArgs.__init__()=Libs.libanalyze.TraceArgs-class.html#__init__,Method Libs.libanalyze.XREFBasicBlock.__init__()=Libs.libanalyze.XREFBasicBlock-class.html#__init__,Method Libs.libanalyze.opCode.__init__()=Libs.libanalyze.opCode-class.html#__init__,Method Libs.libdatatype.Data.__init__()=Libs.libdatatype.Data-class.html#__init__,Method Libs.libdatatype.DataTypes.__init__()=Libs.libdatatype.DataTypes-class.html#__init__,Method Libs.libdatatype.DoubleLinkedList.__init__()=Libs.libdatatype.DoubleLinkedList-class.html#__init__,Method Libs.libdatatype.Pointer.__init__()=Libs.libdatatype.Pointer-class.html#__init__,Method Libs.libdatatype.String.__init__()=Libs.libdatatype.String-class.html#__init__,Method Libs.libdatatype.Unicode.__init__()=Libs.libdatatype.Unicode-class.html#__init__,Method Libs.libevent.CreateProcessEvent.__init__()=Libs.libevent.CreateProcessEvent-class.html#__init__,Method Libs.libevent.CreateThreadEvent.__init__()=Libs.libevent.CreateThreadEvent-class.html#__init__,Method Libs.libevent.Event.__init__()=Libs.libevent.Event-class.html#__init__,Method Libs.libevent.ExceptionEvent.__init__()=Libs.libevent.ExceptionEvent-class.html#__init__,Method Libs.libevent.ExceptionRecord.__init__()=Libs.libevent.ExceptionRecord-class.html#__init__,Method Libs.libevent.ExitProcessEvent.__init__()=Libs.libevent.ExitProcessEvent-class.html#__init__,Method Libs.libevent.ExitThreadEvent.__init__()=Libs.libevent.ExitThreadEvent-class.html#__init__,Method Libs.libevent.LoadDLLEvent.__init__()=Libs.libevent.LoadDLLEvent-class.html#__init__,Method Libs.libevent.OutputDebugEvent.__init__()=Libs.libevent.OutputDebugEvent-class.html#__init__,Method Libs.libevent.RIPEvent.__init__()=Libs.libevent.RIPEvent-class.html#__init__,Method Libs.libevent.UnloadDLLEvent.__init__()=Libs.libevent.UnloadDLLEvent-class.html#__init__,Method Libs.libheap.Blocks.__init__()=Libs.libheap.Blocks-class.html#__init__,Method Libs.libheap.Bucket.__init__()=Libs.libheap.Bucket-class.html#__init__,Method Libs.libheap.HeapBucketRunInfo.__init__()=Libs.libheap.HeapBucketRunInfo-class.html#__init__,Method Libs.libheap.HeapCache.__init__()=Libs.libheap.HeapCache-class.html#__init__,Method Libs.libheap.LFHeap.__init__()=Libs.libheap.LFHeap-class.html#__init__,Method Libs.libheap.LocalData.__init__()=Libs.libheap.LocalData-class.html#__init__,Method Libs.libheap.LocalSegmentInfo.__init__()=Libs.libheap.LocalSegmentInfo-class.html#__init__,Method Libs.libheap.PHeap.__init__()=Libs.libheap.PHeap-class.html#__init__,Method Libs.libheap.PHeapLookaside.__init__()=Libs.libheap.PHeapLookaside-class.html#__init__,Method Libs.libheap.PLook.__init__()=Libs.libheap.PLook-class.html#__init__,Method Libs.libheap.SearchHeap.__init__()=Libs.libheap.SearchHeap-class.html#__init__,Method Libs.libheap.Segment.__init__()=Libs.libheap.Segment-class.html#__init__,Method Libs.libheap.SubSegment.__init__()=Libs.libheap.SubSegment-class.html#__init__,Method Libs.libheap.UserData.__init__()=Libs.libheap.UserData-class.html#__init__,Method Libs.libheap.UserMemoryCache.__init__()=Libs.libheap.UserMemoryCache-class.html#__init__,Method Libs.libheap.VistaPHeap.__init__()=Libs.libheap.VistaPHeap-class.html#__init__,Method Libs.libheap.VistaSegment.__init__()=Libs.libheap.VistaSegment-class.html#__init__,Method Libs.libheap.Win7LFHeap.__init__()=Libs.libheap.Win7LFHeap-class.html#__init__,Method Libs.libheap.win32heapchunk.__init__()=Libs.libheap.win32heapchunk-class.html#__init__,Method Libs.libheap.win32vistaheapchunk.__init__()=Libs.libheap.win32vistaheapchunk-class.html#__init__,Method Libs.libhook.AccessViolationHook.__init__()=Libs.libhook.AccessViolationHook-class.html#__init__,Method Libs.libhook.AllExceptHook.__init__()=Libs.libhook.AllExceptHook-class.html#__init__,Method Libs.libhook.BpHook.__init__()=Libs.libhook.BpHook-class.html#__init__,Method Libs.libhook.CreateProcessHook.__init__()=Libs.libhook.CreateProcessHook-class.html#__init__,Method Libs.libhook.CreateThreadHook.__init__()=Libs.libhook.CreateThreadHook-class.html#__init__,Method Libs.libhook.ExitProcessHook.__init__()=Libs.libhook.ExitProcessHook-class.html#__init__,Method Libs.libhook.ExitThreadHook.__init__()=Libs.libhook.ExitThreadHook-class.html#__init__,Method Libs.libhook.FastLogHook.__init__()=Libs.libhook.FastLogHook-class.html#__init__,Method Libs.libhook.Hook.__init__()=Libs.libhook.Hook-class.html#__init__,Method Libs.libhook.LoadDLLHook.__init__()=Libs.libhook.LoadDLLHook-class.html#__init__,Method Libs.libhook.LogBpHook.__init__()=Libs.libhook.LogBpHook-class.html#__init__,Method Libs.libhook.PostAnalysisHook.__init__()=Libs.libhook.PostAnalysisHook-class.html#__init__,Method Libs.libhook.PreBpHook.__init__()=Libs.libhook.PreBpHook-class.html#__init__,Method Libs.libhook.RunUntilAV.__init__()=Libs.libhook.RunUntilAV-class.html#__init__,Method Libs.libhook.STDCALLFastLogHook.__init__()=Libs.libhook.STDCALLFastLogHook-class.html#__init__,Method Libs.libhook.UnloadDLLHook.__init__()=Libs.libhook.UnloadDLLHook-class.html#__init__,Method Libs.librecognition.FunctionRecognition.__init__()=Libs.librecognition.FunctionRecognition-class.html#__init__,Method Libs.librecognition.MultiCSVIterator.__init__()=Libs.librecognition.MultiCSVIterator-class.html#__init__,Method Libs.pelib.Directory.__init__()=Libs.pelib.Directory-class.html#__init__,Method Libs.pelib.IMGOPThdr.__init__()=Libs.pelib.IMGOPThdr-class.html#__init__,Method Libs.pelib.IMGhdr.__init__()=Libs.pelib.IMGhdr-class.html#__init__,Method Libs.pelib.ImageExportDirectory.__init__()=Libs.pelib.ImageExportDirectory-class.html#__init__,Method Libs.pelib.ImageImportByName.__init__()=Libs.pelib.ImageImportByName-class.html#__init__,Method Libs.pelib.ImportDescriptor.__init__()=Libs.pelib.ImportDescriptor-class.html#__init__,Method Libs.pelib.MZ.__init__()=Libs.pelib.MZ-class.html#__init__,Method Libs.pelib.PE.__init__()=Libs.pelib.PE-class.html#__init__,Method Libs.pelib.PElib.__init__()=Libs.pelib.PElib-class.html#__init__,Method Libs.pelib.Section.__init__()=Libs.pelib.Section-class.html#__init__"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-3', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">     </tt>
+<a name="CreateProcessEvent._GetValues"></a><div id="CreateProcessEvent._GetValues-def"><a name="L57"></a><tt class="py-lineno"> 57</tt> <a class="py-toggle" href="#" id="CreateProcessEvent._GetValues-toggle" onclick="return toggle('CreateProcessEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.CreateProcessEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CreateProcessEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CreateProcessEvent._GetValues-expanded"><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hFile</tt>                 <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt>  </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hProcess</tt>              <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt>  </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hThread</tt>               <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt>  </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpBaseOfImage</tt>         <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt>  </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugInfoFileOffset</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt>  </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">nDebugInfoSize</tt>        <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt>  </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpThreadLocalBase</tt>     <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">6</tt><tt class="py-op">]</tt>  </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpStartAddress</tt>        <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">7</tt><tt class="py-op">]</tt>  </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpImageName</tt>           <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">8</tt><tt class="py-op">]</tt>  </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">fUnicode</tt>              <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">9</tt><tt class="py-op">]</tt>  </tt>
+</div></div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="CreateThreadEvent"></a><div id="CreateThreadEvent-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="CreateThreadEvent-toggle" onclick="return toggle('CreateThreadEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.CreateThreadEvent-class.html">CreateThreadEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CreateThreadEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CreateThreadEvent-expanded"><a name="CreateThreadEvent.__init__"></a><div id="CreateThreadEvent.__init__-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="CreateThreadEvent.__init__-toggle" onclick="return toggle('CreateThreadEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.CreateThreadEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CreateThreadEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CreateThreadEvent.__init__-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt id="link-4" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-4', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-5', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">         </tt>
+<a name="CreateThreadEvent._GetValues"></a><div id="CreateThreadEvent._GetValues-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="CreateThreadEvent._GetValues-toggle" onclick="return toggle('CreateThreadEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.CreateThreadEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CreateThreadEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CreateThreadEvent._GetValues-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hThread</tt>           <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpStartAddress</tt>    <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpThreadLocalBase</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt id="link-6" class="py-name" targets="Variable Libs.libevent.EXCEPTION_CODE=Libs.libevent-module.html#EXCEPTION_CODE"><a title="Libs.libevent.EXCEPTION_CODE" class="py-name" href="#" onclick="return doclink('link-6', 'EXCEPTION_CODE', 'link-6');">EXCEPTION_CODE</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_BREAKPOINT</tt><tt class="py-op">:</tt> <tt class="py-string">"Breakpoint"</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_SINGLE_STEP</tt><tt class="py-op">:</tt><tt class="py-string">"SingleStep"</tt><tt class="py-op">,</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_ACCESS_VIOLATION</tt><tt class="py-op">:</tt><tt class="py-string">"AccessViolation"</tt><tt class="py-op">,</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_GUARD_PAGE</tt><tt class="py-op">:</tt> <tt class="py-string">"GuardPage"</tt><tt class="py-op">,</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_ARRAY_BOUNDS_EXCEEDED</tt><tt class="py-op">:</tt> <tt class="py-string">"ArrayBoundsExceeded"</tt><tt class="py-op">,</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_DENORMAL_OPERAND</tt><tt class="py-op">:</tt> <tt class="py-string">"FltDenormalOperand"</tt><tt class="py-op">,</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_DIVIDE_BY_ZERO</tt><tt class="py-op">:</tt> <tt class="py-string">"FltDivideByZero"</tt><tt class="py-op">,</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_INEXACT_RESULT</tt><tt class="py-op">:</tt> <tt class="py-string">"FltInexactResult"</tt><tt class="py-op">,</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_INVALID_OPERATION</tt><tt class="py-op">:</tt> <tt class="py-string">"FltInvalidOperation"</tt><tt class="py-op">,</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_OVERFLOW</tt><tt class="py-op">:</tt> <tt class="py-string">"FltOverflow"</tt><tt class="py-op">,</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_STACK_CHECK</tt><tt class="py-op">:</tt> <tt class="py-string">"FltStackCheck"</tt><tt class="py-op">,</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_UNDERFLOW</tt><tt class="py-op">:</tt> <tt class="py-string">"FltUnderflow"</tt><tt class="py-op">,</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_INT_DIVIDE_BY_ZERO</tt><tt class="py-op">:</tt> <tt class="py-string">"IntDivideByZero"</tt><tt class="py-op">,</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_INT_OVERFLOW</tt><tt class="py-op">:</tt> <tt class="py-string">"IntOverflow"</tt><tt class="py-op">,</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_PRIV_INSTRUCTION</tt><tt class="py-op">:</tt> <tt class="py-string">"PrivInstruction"</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_ILLEGAL_INSTRUCTION</tt><tt class="py-op">:</tt> <tt class="py-string">"IllegalInstruction"</tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_NONCONTINUABLE_EXCEPTION</tt><tt class="py-op">:</tt> <tt class="py-string">"NonContinuableException"</tt><tt class="py-op">,</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                  <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_STACK_OVERFLOW</tt><tt class="py-op">:</tt> <tt class="py-string">"StackOverflow"</tt>  </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">              <tt class="py-op">}</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord"></a><div id="ExceptionRecord-def"><a name="L98"></a><tt class="py-lineno"> 98</tt> <a class="py-toggle" href="#" id="ExceptionRecord-toggle" onclick="return toggle('ExceptionRecord');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html">ExceptionRecord</a><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ExceptionRecord-expanded"><a name="ExceptionRecord.__init__"></a><div id="ExceptionRecord.__init__-def"><a name="L99"></a><tt class="py-lineno"> 99</tt> <a class="py-toggle" href="#" id="ExceptionRecord.__init__-toggle" onclick="return toggle('ExceptionRecord.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">er</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.__init__-expanded"><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt>        <tt class="py-op">=</tt> <tt class="py-name">er</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionFlags</tt>       <tt class="py-op">=</tt> <tt class="py-name">er</tt> <tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionAddress</tt>     <tt class="py-op">=</tt> <tt class="py-name">er</tt> <tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">NumberParameters</tt>     <tt class="py-op">=</tt> <tt class="py-name">er</tt> <tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionInformation</tt> <tt class="py-op">=</tt> <tt class="py-name">er</tt> <tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Class Libs.libevent.ExceptionRecord=Libs.libevent.ExceptionRecord-class.html"><a title="Libs.libevent.ExceptionRecord" class="py-name" href="#" onclick="return doclink('link-7', 'ExceptionRecord', 'link-7');">ExceptionRecord</a></tt>      <tt class="py-op">=</tt> <tt class="py-name">er</tt> <tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isAccessViolationOnExecute"></a><div id="ExceptionRecord.isAccessViolationOnExecute-def"><a name="L107"></a><tt class="py-lineno">107</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isAccessViolationOnExecute-toggle" onclick="return toggle('ExceptionRecord.isAccessViolationOnExecute');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isAccessViolationOnExecute">isAccessViolationOnExecute</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isAccessViolationOnExecute-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isAccessViolationOnExecute-expanded"><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method Libs.libevent.ExceptionRecord.isAccessViolation()=Libs.libevent.ExceptionRecord-class.html#isAccessViolation"><a title="Libs.libevent.ExceptionRecord.isAccessViolation" class="py-name" href="#" onclick="return doclink('link-8', 'isAccessViolation', 'link-8');">isAccessViolation</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionInformation</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-number">1</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionInformation</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionAddress</tt> </tt>
+</div><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">     </tt>
+<a name="ExceptionRecord.isAccessViolationOnWrite"></a><div id="ExceptionRecord.isAccessViolationOnWrite-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isAccessViolationOnWrite-toggle" onclick="return toggle('ExceptionRecord.isAccessViolationOnWrite');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isAccessViolationOnWrite">isAccessViolationOnWrite</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isAccessViolationOnWrite-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isAccessViolationOnWrite-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="Libs.libevent.ExceptionRecord.isAccessViolation" class="py-name" href="#" onclick="return doclink('link-9', 'isAccessViolation', 'link-8');">isAccessViolation</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionInformation</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">     </tt>
+<a name="ExceptionRecord.isAccessViolationOnRead"></a><div id="ExceptionRecord.isAccessViolationOnRead-def"><a name="L113"></a><tt class="py-lineno">113</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isAccessViolationOnRead-toggle" onclick="return toggle('ExceptionRecord.isAccessViolationOnRead');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isAccessViolationOnRead">isAccessViolationOnRead</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isAccessViolationOnRead-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isAccessViolationOnRead-expanded"><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="Libs.libevent.ExceptionRecord.isAccessViolation" class="py-name" href="#" onclick="return doclink('link-10', 'isAccessViolation', 'link-8');">isAccessViolation</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionInformation</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-number">1</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionInformation</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">!=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionAddress</tt>  </tt>
+</div><a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">         </tt>
+<a name="ExceptionRecord.isBreakpoint"></a><div id="ExceptionRecord.isBreakpoint-def"><a name="L116"></a><tt class="py-lineno">116</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isBreakpoint-toggle" onclick="return toggle('ExceptionRecord.isBreakpoint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isBreakpoint">isBreakpoint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isBreakpoint-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isBreakpoint-expanded"><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_BREAKPOINT</tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isSingleStep"></a><div id="ExceptionRecord.isSingleStep-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isSingleStep-toggle" onclick="return toggle('ExceptionRecord.isSingleStep');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isSingleStep">isSingleStep</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isSingleStep-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isSingleStep-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_SINGLE_STEP</tt> </tt>
+</div><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isAccessViolation"></a><div id="ExceptionRecord.isAccessViolation-def"><a name="L122"></a><tt class="py-lineno">122</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isAccessViolation-toggle" onclick="return toggle('ExceptionRecord.isAccessViolation');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isAccessViolation">isAccessViolation</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isAccessViolation-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isAccessViolation-expanded"><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_ACCESS_VIOLATION</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isGuardPage"></a><div id="ExceptionRecord.isGuardPage-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isGuardPage-toggle" onclick="return toggle('ExceptionRecord.isGuardPage');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isGuardPage">isGuardPage</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isGuardPage-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isGuardPage-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_GUARD_PAGE</tt> </tt>
+</div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isArrayBoundsExceeded"></a><div id="ExceptionRecord.isArrayBoundsExceeded-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isArrayBoundsExceeded-toggle" onclick="return toggle('ExceptionRecord.isArrayBoundsExceeded');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isArrayBoundsExceeded">isArrayBoundsExceeded</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isArrayBoundsExceeded-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isArrayBoundsExceeded-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_ARRAY_BOUNDS_EXCEEDED</tt> </tt>
+</div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltDenormalOperand"></a><div id="ExceptionRecord.isFltDenormalOperand-def"><a name="L131"></a><tt class="py-lineno">131</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltDenormalOperand-toggle" onclick="return toggle('ExceptionRecord.isFltDenormalOperand');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltDenormalOperand">isFltDenormalOperand</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltDenormalOperand-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltDenormalOperand-expanded"><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_DENORMAL_OPERAND</tt> </tt>
+</div><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltDivideByZero"></a><div id="ExceptionRecord.isFltDivideByZero-def"><a name="L134"></a><tt class="py-lineno">134</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltDivideByZero-toggle" onclick="return toggle('ExceptionRecord.isFltDivideByZero');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltDivideByZero">isFltDivideByZero</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltDivideByZero-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltDivideByZero-expanded"><a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_DIVIDE_BY_ZERO</tt> </tt>
+</div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltInexactResult"></a><div id="ExceptionRecord.isFltInexactResult-def"><a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltInexactResult-toggle" onclick="return toggle('ExceptionRecord.isFltInexactResult');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltInexactResult">isFltInexactResult</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltInexactResult-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltInexactResult-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_INEXACT_RESULT</tt> </tt>
+</div><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltInvalidOperation"></a><div id="ExceptionRecord.isFltInvalidOperation-def"><a name="L140"></a><tt class="py-lineno">140</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltInvalidOperation-toggle" onclick="return toggle('ExceptionRecord.isFltInvalidOperation');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltInvalidOperation">isFltInvalidOperation</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltInvalidOperation-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltInvalidOperation-expanded"><a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_INVALID_OPERATION</tt> </tt>
+</div><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltOverflow"></a><div id="ExceptionRecord.isFltOverflow-def"><a name="L143"></a><tt class="py-lineno">143</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltOverflow-toggle" onclick="return toggle('ExceptionRecord.isFltOverflow');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltOverflow">isFltOverflow</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltOverflow-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltOverflow-expanded"><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_OVERFLOW</tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltStackCheck"></a><div id="ExceptionRecord.isFltStackCheck-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltStackCheck-toggle" onclick="return toggle('ExceptionRecord.isFltStackCheck');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltStackCheck">isFltStackCheck</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltStackCheck-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltStackCheck-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_STACK_CHECK</tt> </tt>
+</div><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isFltUnderflow"></a><div id="ExceptionRecord.isFltUnderflow-def"><a name="L149"></a><tt class="py-lineno">149</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isFltUnderflow-toggle" onclick="return toggle('ExceptionRecord.isFltUnderflow');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isFltUnderflow">isFltUnderflow</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isFltUnderflow-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isFltUnderflow-expanded"><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_FLT_UNDERFLOW</tt> </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isIntDivideByZero"></a><div id="ExceptionRecord.isIntDivideByZero-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isIntDivideByZero-toggle" onclick="return toggle('ExceptionRecord.isIntDivideByZero');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isIntDivideByZero">isIntDivideByZero</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isIntDivideByZero-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isIntDivideByZero-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_INT_DIVIDE_BY_ZERO</tt> </tt>
+</div><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isIntOverflow"></a><div id="ExceptionRecord.isIntOverflow-def"><a name="L155"></a><tt class="py-lineno">155</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isIntOverflow-toggle" onclick="return toggle('ExceptionRecord.isIntOverflow');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isIntOverflow">isIntOverflow</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isIntOverflow-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isIntOverflow-expanded"><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_INT_OVERFLOW</tt> </tt>
+</div><a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isPrivInstruction"></a><div id="ExceptionRecord.isPrivInstruction-def"><a name="L158"></a><tt class="py-lineno">158</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isPrivInstruction-toggle" onclick="return toggle('ExceptionRecord.isPrivInstruction');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isPrivInstruction">isPrivInstruction</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isPrivInstruction-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isPrivInstruction-expanded"><a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_PRIV_INSTRUCTION</tt> </tt>
+</div><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isIllegalInstruction"></a><div id="ExceptionRecord.isIllegalInstruction-def"><a name="L161"></a><tt class="py-lineno">161</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isIllegalInstruction-toggle" onclick="return toggle('ExceptionRecord.isIllegalInstruction');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isIllegalInstruction">isIllegalInstruction</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isIllegalInstruction-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isIllegalInstruction-expanded"><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_ILLEGAL_INSTRUCTION</tt> </tt>
+</div><a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isNonContinuableException"></a><div id="ExceptionRecord.isNonContinuableException-def"><a name="L164"></a><tt class="py-lineno">164</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isNonContinuableException-toggle" onclick="return toggle('ExceptionRecord.isNonContinuableException');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isNonContinuableException">isNonContinuableException</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isNonContinuableException-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isNonContinuableException-expanded"><a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_NONCONTINUABLE_EXCEPTION</tt> </tt>
+</div><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"> </tt>
+<a name="ExceptionRecord.isExceptionStackOverflow"></a><div id="ExceptionRecord.isExceptionStackOverflow-def"><a name="L167"></a><tt class="py-lineno">167</tt> <a class="py-toggle" href="#" id="ExceptionRecord.isExceptionStackOverflow-toggle" onclick="return toggle('ExceptionRecord.isExceptionStackOverflow');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#isExceptionStackOverflow">isExceptionStackOverflow</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.isExceptionStackOverflow-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.isExceptionStackOverflow-expanded"><a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt> <tt class="py-op">==</tt> <tt class="py-name">debugger</tt><tt class="py-op">.</tt><tt class="py-name">EXCEPTION_STACK_OVERFLOW</tt> </tt>
+</div><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">     </tt>
+<a name="ExceptionRecord.getType"></a><div id="ExceptionRecord.getType-def"><a name="L170"></a><tt class="py-lineno">170</tt> <a class="py-toggle" href="#" id="ExceptionRecord.getType-toggle" onclick="return toggle('ExceptionRecord.getType');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#getType">getType</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.getType-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.getType-expanded"><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-11" class="py-name"><a title="Libs.libevent.EXCEPTION_CODE" class="py-name" href="#" onclick="return doclink('link-11', 'EXCEPTION_CODE', 'link-6');">EXCEPTION_CODE</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ExceptionCode</tt><tt class="py-op">]</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">KeyError</tt><tt class="py-op">:</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-string">"UknownException"</tt> </tt>
+</div><a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">         </tt>
+<a name="ExceptionRecord.__str__"></a><div id="ExceptionRecord.__str__-def"><a name="L176"></a><tt class="py-lineno">176</tt> <a class="py-toggle" href="#" id="ExceptionRecord.__str__-toggle" onclick="return toggle('ExceptionRecord.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionRecord-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionRecord.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionRecord.__str__-expanded"><a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method Libs.debugtypes.Handle.getType()=Libs.debugtypes.Handle-class.html#getType,Method Libs.debugtypes.MemoryPage.getType()=Libs.debugtypes.MemoryPage-class.html#getType,Method Libs.debugtypes.Module.getType()=Libs.debugtypes.Module-class.html#getType,Method Libs.debugtypes.Symbol.getType()=Libs.debugtypes.Symbol-class.html#getType,Method Libs.libevent.ExceptionRecord.getType()=Libs.libevent.ExceptionRecord-class.html#getType"><a title="Libs.debugtypes.Handle.getType
+Libs.debugtypes.MemoryPage.getType
+Libs.debugtypes.Module.getType
+Libs.debugtypes.Symbol.getType
+Libs.libevent.ExceptionRecord.getType" class="py-name" href="#" onclick="return doclink('link-12', 'getType', 'link-12');">getType</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">     </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">     </tt>
+<a name="ExceptionEvent"></a><div id="ExceptionEvent-def"><a name="L180"></a><tt class="py-lineno">180</tt> <a class="py-toggle" href="#" id="ExceptionEvent-toggle" onclick="return toggle('ExceptionEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.ExceptionEvent-class.html">ExceptionEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ExceptionEvent-expanded"><a name="ExceptionEvent.__init__"></a><div id="ExceptionEvent.__init__-def"><a name="L181"></a><tt class="py-lineno">181</tt> <a class="py-toggle" href="#" id="ExceptionEvent.__init__-toggle" onclick="return toggle('ExceptionEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionEvent.__init__-expanded"><a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt id="link-13" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-13', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-14', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">         </tt>
+<a name="ExceptionEvent._GetValues"></a><div id="ExceptionEvent._GetValues-def"><a name="L184"></a><tt class="py-lineno">184</tt> <a class="py-toggle" href="#" id="ExceptionEvent._GetValues-toggle" onclick="return toggle('ExceptionEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExceptionEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExceptionEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExceptionEvent._GetValues-expanded"><a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwFirstChance</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Exception</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">er</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">Exception</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method Libs.libheap.PLook.append()=Libs.libheap.PLook-class.html#append"><a title="Libs.libheap.PLook.append" class="py-name" href="#" onclick="return doclink('link-15', 'append', 'link-15');">append</a></tt><tt class="py-op">(</tt> <tt id="link-16" class="py-name"><a title="Libs.libevent.ExceptionRecord" class="py-name" href="#" onclick="return doclink('link-16', 'ExceptionRecord', 'link-7');">ExceptionRecord</a></tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-name">er</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+</div></div><a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">             </tt>
+<a name="ExitProcessEvent"></a><div id="ExitProcessEvent-def"><a name="L190"></a><tt class="py-lineno">190</tt> <a class="py-toggle" href="#" id="ExitProcessEvent-toggle" onclick="return toggle('ExitProcessEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.ExitProcessEvent-class.html">ExitProcessEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExitProcessEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ExitProcessEvent-expanded"><a name="ExitProcessEvent.__init__"></a><div id="ExitProcessEvent.__init__-def"><a name="L191"></a><tt class="py-lineno">191</tt> <a class="py-toggle" href="#" id="ExitProcessEvent.__init__-toggle" onclick="return toggle('ExitProcessEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExitProcessEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExitProcessEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExitProcessEvent.__init__-expanded"><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt id="link-17" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-17', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-18', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">         </tt>
+<a name="ExitProcessEvent._GetValues"></a><div id="ExitProcessEvent._GetValues-def"><a name="L194"></a><tt class="py-lineno">194</tt> <a class="py-toggle" href="#" id="ExitProcessEvent._GetValues-toggle" onclick="return toggle('ExitProcessEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExitProcessEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExitProcessEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExitProcessEvent._GetValues-expanded"><a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwExitCode</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">  </tt>
+<a name="ExitThreadEvent"></a><div id="ExitThreadEvent-def"><a name="L197"></a><tt class="py-lineno">197</tt> <a class="py-toggle" href="#" id="ExitThreadEvent-toggle" onclick="return toggle('ExitThreadEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.ExitThreadEvent-class.html">ExitThreadEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExitThreadEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ExitThreadEvent-expanded"><a name="ExitThreadEvent.__init__"></a><div id="ExitThreadEvent.__init__-def"><a name="L198"></a><tt class="py-lineno">198</tt> <a class="py-toggle" href="#" id="ExitThreadEvent.__init__-toggle" onclick="return toggle('ExitThreadEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExitThreadEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExitThreadEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExitThreadEvent.__init__-expanded"><a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt id="link-19" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-19', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-20', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">         </tt>
+<a name="ExitThreadEvent._GetValues"></a><div id="ExitThreadEvent._GetValues-def"><a name="L201"></a><tt class="py-lineno">201</tt> <a class="py-toggle" href="#" id="ExitThreadEvent._GetValues-toggle" onclick="return toggle('ExitThreadEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.ExitThreadEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExitThreadEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExitThreadEvent._GetValues-expanded"><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwExitCode</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"> </tt>
+<a name="LoadDLLEvent"></a><div id="LoadDLLEvent-def"><a name="L204"></a><tt class="py-lineno">204</tt> <a class="py-toggle" href="#" id="LoadDLLEvent-toggle" onclick="return toggle('LoadDLLEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.LoadDLLEvent-class.html">LoadDLLEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LoadDLLEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="LoadDLLEvent-expanded"><a name="LoadDLLEvent.__init__"></a><div id="LoadDLLEvent.__init__-def"><a name="L205"></a><tt class="py-lineno">205</tt> <a class="py-toggle" href="#" id="LoadDLLEvent.__init__-toggle" onclick="return toggle('LoadDLLEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.LoadDLLEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LoadDLLEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LoadDLLEvent.__init__-expanded"><a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt id="link-21" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-21', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-22', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">         </tt>
+<a name="LoadDLLEvent._GetValues"></a><div id="LoadDLLEvent._GetValues-def"><a name="L208"></a><tt class="py-lineno">208</tt> <a class="py-toggle" href="#" id="LoadDLLEvent._GetValues-toggle" onclick="return toggle('LoadDLLEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.LoadDLLEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LoadDLLEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LoadDLLEvent._GetValues-expanded"><a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">hFile</tt>                 <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpBaseOfDll</tt>           <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwDebugInfoFileOffset</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">nDebugInfoSize</tt>        <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpImageName</tt>           <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">fUnicode</tt>              <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"> </tt>
+<a name="OutputDebugEvent"></a><div id="OutputDebugEvent-def"><a name="L216"></a><tt class="py-lineno">216</tt> <a class="py-toggle" href="#" id="OutputDebugEvent-toggle" onclick="return toggle('OutputDebugEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.OutputDebugEvent-class.html">OutputDebugEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="OutputDebugEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="OutputDebugEvent-expanded"><a name="OutputDebugEvent.__init__"></a><div id="OutputDebugEvent.__init__-def"><a name="L217"></a><tt class="py-lineno">217</tt> <a class="py-toggle" href="#" id="OutputDebugEvent.__init__-toggle" onclick="return toggle('OutputDebugEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.OutputDebugEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="OutputDebugEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="OutputDebugEvent.__init__-expanded"><a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">        <tt id="link-23" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-23', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-24', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">         </tt>
+<a name="OutputDebugEvent._GetValues"></a><div id="OutputDebugEvent._GetValues-def"><a name="L220"></a><tt class="py-lineno">220</tt> <a class="py-toggle" href="#" id="OutputDebugEvent._GetValues-toggle" onclick="return toggle('OutputDebugEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.OutputDebugEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="OutputDebugEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="OutputDebugEvent._GetValues-expanded"><a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpDebugStringData</tt>  <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">fUnicode</tt>           <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">nDebugStringLength</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"> </tt>
+<a name="RIPEvent"></a><div id="RIPEvent-def"><a name="L225"></a><tt class="py-lineno">225</tt> <a class="py-toggle" href="#" id="RIPEvent-toggle" onclick="return toggle('RIPEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.RIPEvent-class.html">RIPEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RIPEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="RIPEvent-expanded"><a name="RIPEvent.__init__"></a><div id="RIPEvent.__init__-def"><a name="L226"></a><tt class="py-lineno">226</tt> <a class="py-toggle" href="#" id="RIPEvent.__init__-toggle" onclick="return toggle('RIPEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.RIPEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RIPEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RIPEvent.__init__-expanded"><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt id="link-25" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-25', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-26', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">         </tt>
+<a name="RIPEvent._GetValues"></a><div id="RIPEvent._GetValues-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="RIPEvent._GetValues-toggle" onclick="return toggle('RIPEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.RIPEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RIPEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RIPEvent._GetValues-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwError</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dwType</tt>  <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="UnloadDLLEvent"></a><div id="UnloadDLLEvent-def"><a name="L233"></a><tt class="py-lineno">233</tt> <a class="py-toggle" href="#" id="UnloadDLLEvent-toggle" onclick="return toggle('UnloadDLLEvent');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="Libs.libevent.UnloadDLLEvent-class.html">UnloadDLLEvent</a><tt class="py-op">(</tt><tt class="py-base-class">Event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnloadDLLEvent-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="UnloadDLLEvent-expanded"><a name="UnloadDLLEvent.__init__"></a><div id="UnloadDLLEvent.__init__-def"><a name="L234"></a><tt class="py-lineno">234</tt> <a class="py-toggle" href="#" id="UnloadDLLEvent.__init__-toggle" onclick="return toggle('UnloadDLLEvent.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.UnloadDLLEvent-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnloadDLLEvent.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="UnloadDLLEvent.__init__-expanded"><a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt id="link-27" class="py-name"><a title="Libs.libevent.Event" class="py-name" href="#" onclick="return doclink('link-27', 'Event', 'link-2');">Event</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="Libs.debugtypes.Handle.__init__
+Libs.debugtypes.MemoryPage.__init__
+Libs.debugtypes.Module.__init__
+Libs.debugtypes.PEB.__init__
+Libs.debugtypes.Stack.__init__
+Libs.debugtypes.Symbol.__init__
+Libs.debugtypes.Table.__init__
+Libs.debugtypes.Thread.__init__
+Libs.graphclass.Draw.__init__
+Libs.graphclass.Graph.__init__
+Libs.graphclass.Line.__init__
+Libs.graphclass.Vertex.__init__
+Libs.graphclass.vcgNode.__init__
+Libs.immlib.Debugger.__init__
+Libs.immlib.DictTypes.__init__
+Libs.immlib.HookOutput.__init__
+Libs.immlib.StderrToLog.__init__
+Libs.immlib.StdoutToLog.__init__
+Libs.immutils.antifloatdict.__init__
+Libs.immvcglib.ParseVCGList.__init__
+Libs.immvcglib.graphTree.__init__
+Libs.libanalyze.BasicBlock.__init__
+Libs.libanalyze.Decode.__init__
+Libs.libanalyze.Function.__init__
+Libs.libanalyze.JMCBasicBlock.__init__
+Libs.libanalyze.JMPBasicBlock.__init__
+Libs.libanalyze.RETBasicBlock.__init__
+Libs.libanalyze.TraceArgs.__init__
+Libs.libanalyze.XREFBasicBlock.__init__
+Libs.libanalyze.opCode.__init__
+Libs.libdatatype.Data.__init__
+Libs.libdatatype.DataTypes.__init__
+Libs.libdatatype.DoubleLinkedList.__init__
+Libs.libdatatype.Pointer.__init__
+Libs.libdatatype.String.__init__
+Libs.libdatatype.Unicode.__init__
+Libs.libevent.CreateProcessEvent.__init__
+Libs.libevent.CreateThreadEvent.__init__
+Libs.libevent.Event.__init__
+Libs.libevent.ExceptionEvent.__init__
+Libs.libevent.ExceptionRecord.__init__
+Libs.libevent.ExitProcessEvent.__init__
+Libs.libevent.ExitThreadEvent.__init__
+Libs.libevent.LoadDLLEvent.__init__
+Libs.libevent.OutputDebugEvent.__init__
+Libs.libevent.RIPEvent.__init__
+Libs.libevent.UnloadDLLEvent.__init__
+Libs.libheap.Blocks.__init__
+Libs.libheap.Bucket.__init__
+Libs.libheap.HeapBucketRunInfo.__init__
+Libs.libheap.HeapCache.__init__
+Libs.libheap.LFHeap.__init__
+Libs.libheap.LocalData.__init__
+Libs.libheap.LocalSegmentInfo.__init__
+Libs.libheap.PHeap.__init__
+Libs.libheap.PHeapLookaside.__init__
+Libs.libheap.PLook.__init__
+Libs.libheap.SearchHeap.__init__
+Libs.libheap.Segment.__init__
+Libs.libheap.SubSegment.__init__
+Libs.libheap.UserData.__init__
+Libs.libheap.UserMemoryCache.__init__
+Libs.libheap.VistaPHeap.__init__
+Libs.libheap.VistaSegment.__init__
+Libs.libheap.Win7LFHeap.__init__
+Libs.libheap.win32heapchunk.__init__
+Libs.libheap.win32vistaheapchunk.__init__
+Libs.libhook.AccessViolationHook.__init__
+Libs.libhook.AllExceptHook.__init__
+Libs.libhook.BpHook.__init__
+Libs.libhook.CreateProcessHook.__init__
+Libs.libhook.CreateThreadHook.__init__
+Libs.libhook.ExitProcessHook.__init__
+Libs.libhook.ExitThreadHook.__init__
+Libs.libhook.FastLogHook.__init__
+Libs.libhook.Hook.__init__
+Libs.libhook.LoadDLLHook.__init__
+Libs.libhook.LogBpHook.__init__
+Libs.libhook.PostAnalysisHook.__init__
+Libs.libhook.PreBpHook.__init__
+Libs.libhook.RunUntilAV.__init__
+Libs.libhook.STDCALLFastLogHook.__init__
+Libs.libhook.UnloadDLLHook.__init__
+Libs.librecognition.FunctionRecognition.__init__
+Libs.librecognition.MultiCSVIterator.__init__
+Libs.pelib.Directory.__init__
+Libs.pelib.IMGOPThdr.__init__
+Libs.pelib.IMGhdr.__init__
+Libs.pelib.ImageExportDirectory.__init__
+Libs.pelib.ImageImportByName.__init__
+Libs.pelib.ImportDescriptor.__init__
+Libs.pelib.MZ.__init__
+Libs.pelib.PE.__init__
+Libs.pelib.PElib.__init__
+Libs.pelib.Section.__init__" class="py-name" href="#" onclick="return doclink('link-28', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">         </tt>
+<a name="UnloadDLLEvent._GetValues"></a><div id="UnloadDLLEvent._GetValues-def"><a name="L237"></a><tt class="py-lineno">237</tt> <a class="py-toggle" href="#" id="UnloadDLLEvent._GetValues-toggle" onclick="return toggle('UnloadDLLEvent._GetValues');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="Libs.libevent.UnloadDLLEvent-class.html#_GetValues">_GetValues</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnloadDLLEvent._GetValues-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="UnloadDLLEvent._GetValues-expanded"><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lpBaseOfDll</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+</div></div><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Immunity Debugger API Reference</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Mar 17 18:43:05 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
