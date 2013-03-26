@@ -1,9 +1,0 @@
-We will like to thanks the following contributors:
-
-o Ero Carrera for pefile  (http://code.google.com/p/pefile/)
-o JMS for the getrpc mod  ( jms@bughunter.ca )
-o Bob for the PEid UserDB (  http://www.secretashell.com/BobSoft/ )
-
-
-
-
