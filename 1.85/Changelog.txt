@@ -1,0 +1,468 @@
+1.85	- Added libptrace DLL; this is the new debugging core from which
+	  new primitives will gradually be used.
+	- Rewrote the .SYS file handling to use the libptrace core, to
+	  address several other problems that were reported.
+
+1.84	- Minor Python script fixes.
+	- Fixed crash on loading of .SYS files.
+
+1.83	- Things now work again on Windows 2000.
+	- Python bindings bug fixes.
+	- Improved python error handling.
+	- Added interceptor and symbolicexecutor scripts.
+
+1.82	- Better handling of breakpoints.
+	- Fix thread suspend issues while handling breakpoints.
+	- Reintroduced the python shell.
+	- Updated Python to 2.7.1
+	- Fixed python tracebacks to work again.
+
+1.81
+	- EXCEPTION_GUARD_PAGE can now be ignored.
+	  This will work properly, unless the end-user uses on-access
+	  breakpoints which use guard pages (this principle is broken
+	  anyhow, as passing guard pages to system functions can lead
+	  to undesired side effects).
+
+	- Every python script and hook now runs in its own python interpreter
+	  instance.  This prevents scripts and hooks cluttering a shared
+	  environment.
+
+	- Fixed memory corruption issues when loading .sys files.
+
+	- SYS files can be loaded into the debugger again.
+
+	- LOADDLL.EXE works again.
+
+	- Fixed pathname handling.  The debugger can now use python scripts
+	  and hooks when running in JID mode.
+
+	- ID can now be installed in different paths without giving people
+	  trouble.
+
+	- Added acrocache.py for dumping information related to the Adobe
+	  Acrobat Reader heap
+
+	- Added searchspray.py for finding repeating heap sprayed patterns in
+	  memory.
+
+	- The expression class in prettysolver.py allows for easy manipulation
+	  of SMT formulae using native Python operations. 
+
+	- Fixed a bug in safeseh.py when the module was not specified
+	
+	- Minor bug fixes in the x86smt and deplib scripts
+
+	- Updated the documentation.
+
+1.80 
+	- Analysis engine for converting x86 code to SMT formulae (see
+	  Libs/x86smt/sequenceanalyzer.py). For now we use CVC3 to provide the
+	  backend SMT solver API. (You must add Libs/x86smt/ to your PATH as
+	  two required dlls reside there). 
+
+	- Preliminary DEPLIB v2 scripts built on top of the above analysis
+	  engine for finding ROP gadgets (see PyCommands/deplib/findpivot.py
+	  and PyCommands/deplib/find_gadget.py). 
+
+	- Early versions of libraries for building static analysis tools on
+	  top of ID (See Libs/pathgenerator.py). These are independent of the
+	  x86smt libraries but combinations of both can work well (see
+	  Libs/x86smt/pathwalker.py, PyCommands/x86smt/find_int_overflow.py
+	  and PyCommands/pathogen.py). 
+
+	- The advertisements have been tamed somewhat and have a 78% lower
+	  chance of popping out and tearing your eyes out. 
+
+	- Lots of other cleanups and annoyance removals that we didn't make
+	  note of but probably should have for a more impressive looking 'Bug
+	  Fixes' list.
+
+1.74
+	o Moved project to a new build system. 
+	
+	o Fixed a number of bugs in how PyCommands are run. Threaded 
+	scripts are now supported but they pause the debugger while 
+	running. A future release will have proper support for 
+	daemon-isable Python scripts. To view exceptions raised by 
+	a child-thread create an instance of the immlib.StderrToLog
+	class in your PyCommand script. This will redirect exceptions
+	to the log window. 
+
+	o Changed the naming scheme for all functions in the 'debugger'
+	Python/C module. All functions in this module now follow the 
+	lower_case_functions K&R style.
+
+	o All functions in the 'immlib' module should now use the 
+	camelCase naming scheme. e.g. imm.Log is now imm.log, 
+	imm.getModulebyAddress is now imm.getModuleByAddress and so on.
+
+	o Removed the PyScripts method of running Python code. All
+	functionality can be accessed through PyCommands.
+
+	o Fixed minor bugs and usability issues in a number of the Python 
+	scripts including heap.py, lookaside.py, shellcodediff.py, 
+	hookndr.py and syscall.py.
+
+1.73 Build 10
+
+- Immunity Debugger API
+	o Added inject_dll() method to load a DLL into the debuggee
+
+- Bug Fixes
+	o Fixed pathing issue when updater.exe spawns debugger
+	o Fixed MemoryPage.getOwner() to return only the module name
+      o Fixed hang when opening Immlib-> Lib References menu item
+
+	
+
+1.70 Build 0
+
+New Features:
+
+- Debugger
+  o Added support for variable decoding when second pass analysis enabled
+
+- Immunity Debugger API
+  o Added getVariable/setVariable methods
+  o Added driverlib.py for analyzing drivers
+  
+- PyCommands
+  o activex.py for auditing ActiveX controls
+
+- Bug Fixes
+  o Fixed Python pathing issue when JIT debugging/spawning from right-click
+  o Fixed Module.getName() method to return only the module name
+  o Fixed length check error in imm.Assemble()
+ 
+
+1.60 Build 0
+
+New Features:
+
+- Debugger
+  o Added 'Use Symbol Server' option 
+   [http://forum.immunityinc.com/index.php?topic=162]
+  o Improved Getallnames
+  o Added timestamp to log events
+   
+- Immunity Debugger API
+  o Added getAllSymbolsFromModule method
+  o Added libcontrolflow.py 
+    Container for classes DominatorTree and ControlFlowAnalysis
+  o Added Clear function to FastLogHook.
+
+- PyCommands
+  o Added findloop.py: Find natural loops given a function start.
+  o Added treedll.py: Creates imported dll tree.
+  
+
+- Bug Fixes:
+  o Fixed POST_ANALYSIS_HOOK "FATAL ERROR"
+  o Fixed Arguments overflow (Thanks David Wetson for reporting this one!)
+  o Local Symbol Path issue 
+  o Analysis second pass option now works
+  o Getallsymbols now correctly creates the PyDict [Import/Export/Library issue]
+  
+  
+1.50 Build 0
+
+New Features:
+
+- Debugger:
+  o Added "Servers" folder with specific pycommand listeners
+
+- Memory Pages:
+  o Working on Windows Vista
+
+Immunity Debugger API:
+  o Added imm.vmQuery() wrapper [Query Virtual Memory pages]
+  o The MemoryPage class has been improved.
+    - Protect and Allocation Protect Flags are queried realtime
+    - You can get a human readable flag passing human = 1 to
+      page.getAccess() and page.getInitAccess()
+  o Added:
+    - searchOnExecute()
+    - searchOnRead()
+    - searchOnWrite()
+    These methods will search in any memory page with access = any combination.
+  o Modified:
+    - Search()
+    - searchShort()
+    - searchLong()
+    to receive an extra flag parameter to specify memory protection type
+    when searching.
+	o Added imm.isAdmin() : is ID running as admin?
+  o Added Thread class to debugtypes.py
+  o Added imm.getAllThreads() method
+  o librecognition.py : Improved REGEXP support for the indexed register search
+  o Added Function.findRetValue Find all the possible values on a Function
+  o GFlags class Handle Windows Global Flags.
+
+PyCommands:
+
+  o gflags.py: Enable/Disable Windows Global Flags
+  o recognize.py: Backward compatability
+  o Added hookssl.py 
+  o Added ssl_listener.py to Servers directory
+  o Added hookndr.py Hooks the NDR unmarshalling routines and prints them 
+    out so you can see which ones worked
+  o Added nohooks.py : remove all hooks from memory
+
+Bug Fixes:
+
+- Debugger Core
+  o The memory page protect information is correctly displayed now.
+  o Fixed Second Analisys pass repeated entries bug.
+  o Fixed thread state swap issue which was leading to a memleak.
+
+
+1.40 Build 0
+
+New Features:
+
+- Debugger Core:
+  o Added Silent Debugging Flag [accesible via Debugging options ALT-O or via immlib]
+    http://forum.immunityinc.com/index.php?topic=157.0
+  o Added Analysis Second Pass [Decoding Functions]
+    http://forum.immunityinc.com/index.php?topic=163.0
+    
+- Debugger GUI Core:
+  o Now you can add headers + other useful information on every Row
+    displayed at the Disasm Window. The information will be saved
+    as part of dump struct.
+  o Detach option added to File Menu: Go to File -> Detach [You need to be attached to
+    gray out Detach]
+    http://forum.immunityinc.com/index.php?topic=158.0
+    
+
+- Debugger GUI:
+  o Right click on disasm line -> Add Header will add headers to your line
+
+    
+
+- Immunity Debugger API:
+  o Row Headers / Adding Lines to CPU
+    - Added imm.addHeader() and imm.getHeader() methods.
+    - imm.addLine behaves like addHeader()
+    - Added imm.removeHeader()/imm.removeLine() && imm.getHeader()/imm.getLine()
+    - Added imm.getTraceArgs() 
+    
+  o Added imm.goSilent() method.
+  o Added imm.undecorateName() method: Undecorate symbol names
+    http://forum.immunityinc.com/index.php?topic=159.0
+  o Added imm.Detach() method: Detach current process from debugger
+  o Added imm.prepareForNewProcess() method: Prepare Debugger core for a fresh start
+  o Updated BoB's UserDB.txt (http://peid.info/BobSoft/Downloads.html)
+    
+
+- PyCommands:
+  o Added namefunc.py : a simple samplescript that uses imm.addHeader to name
+    functions in module
+  o Added traceargs.py: find User supplied arguments into a given function.
+  o Added JMS's Mike & Boo script
+  o User Contributed PyCommands:
+     - BoB (http://PEiD.info/BobSoft/)
+       * scanpe.py (http://forum.immunityinc.com/index.php?topic=137.0)
+       * hidedebug.py (http://forum.immunityinc.com/index.php?topic=140.0)
+       * bpxep.py (http://forum.immunityinc.com/index.php?topic=138.0)
+       
+  
+Bug Fixes:
+
+- Fixed error when adding knowledge and changing python enviroments later.
+  (__dict__ not accesible in restricted mode error)
+
+1.30 Build 0
+November 1, 2007
+
+New Features:
+
+- Immunity Debugger API
+  o Hooks
+    - Hooks can receive force flag to overwrite previously placed hooks
+    - Hooks can receive time to live in memory parameter when adding
+      (After the TTL expires, the hook is automatically removed from memory)
+    - Hooks has a runTimeout method to execute code after TTL expires
+      o Choose thread enviroment to execute the ttl code
+    - Added special kind of AccessViolation hook: RunUntilAV() class
+  o Added setHardwareBreakpoint method
+  o Address deleteBreakpoint method
+  o Process flow:
+    o Improved methods:
+          - stepOver
+	  - stepIn
+	  - Run
+	  - Attach
+    o Added methods:
+          - openProcess
+	  - restartProcess
+	  - pause
+	  - runTillReturn
+
+    
+    
+
+- PyCommands
+  o search allows multiple line searching: !search add esp,const\nret
+  o Added sql_listener and sqlhooker
+  o Added Example processflow script
+  
+  
+Bug Fixes:
+
+- Fixed imm.ps() to correctly fetch udp port list
+  http://forum.immunityinc.com/index.php?topic=84.0
+- Fixed Get references methods
+  
+1.20 Build 0
+October 1, 2007
+
+New Features:
+
+- Immunity Debugger API
+  o immlib.getThreadId() method added: return the current debuggee thread id
+	o immlib.getCallTree() method added: return the call tree for given address
+	o immlib.setFocus() method added: focus ID window
+	o immlib.isValidHandle() method added: check if a HWND is still valid
+	o immlib.getInfoPanel() method added: get information from panel window
+  	and optionally receives a type flag to force the kind of comment fetched.
+  o imm.findPacker() method added: find packers/cryptors on a file or a loaded
+		module
+	o imm.getMemoryPagebyOwner(): Find all the memory pages belonging to a module.
+	o immlib.ps() returns two extra objects: the tcp list and the udp list
+	o immlib.getComment() now will try to fetch all types of comments
+	o Added new HOOKTYPE: PRE_BP_HOOK, hooks exactly before the breakpoint is hit
+	(Decoding events timeline)
+	o New Vista support for libheap
+	o Custom Tables has "Clear Window" menu now
+	o Added several methods from librecognize
+
+- PyCommands
+	o findpacker added. (Use of immlib.findPacker to get Packers from a module)
+	o recognize added. (Function Recognizing using heuristic patterns)
+	o Hippie now can filter by heap
+	o heap updated to work with new Vista Heap
+	o Optimized code for stackvars (Memory usage reduction during runtime)
+
+
+- Core
+	o Pyshell can be focused once created with alt-F11
+	o Shortcut for attach process added: Ctrl+F1
+	o Added librecognition.py (Library for function recognizing)
+
+- Graph
+	o immvcglib.generateGraphFromBuf() method added: play with your own vcg files!
+	o Redesign of VCG parser: easier to read, easier to use.
+
+
+
+Bug Fixes:
+
+o Return value (HWND) of createTable
+o Fixed Attach Search Filtering : 
+  http://forum.immunityinc.com/index.php?topic=49.0
+o Grapher: Vertex lastline jumps correctly displayed now
+o Fixed crash when searching on modules:
+  http://forum.immunityinc.com/index.php?topic=63.0
+o Fixed search issue on protected binary:
+  http://forum.immunityinc.com/index.php?topic=34
+o Fixed breakpoint/logpoint hooks issue (logic/stepping inside a hook)
+o Fixed PyString_AsString() missbehaviour
+o Fixed PyCommand Gui Arguments box to receive \x00 as argument
+o Fixed imm.getModulebyAddress() to receive any module address and not only module entry point
+  http://forum.immunityinc.com/index.php?topic=74.0
+  
+ 
+
+1.1 Build 2
+August 31, 2007
+
+Python Thread entering the spiral zone has been fixed
+
+1.1 Build 0
+August 30, 2007
+
+New Features:
+
+o Interactive Python Shell added
+o Lookaside enhanced output + Discovery option
+o libdatatype "Get" Function
+o Get OS information methods
+o Ero Carrera's pefile.py (http://code.google.com/p/pefile/)
+o Python engine rewritten to properly use thread locking/unlocking
+o Added ignoreSingleStep method for immlib (TRANSPARENT + CONVETIONAL)
+o Attach process window is now dinamically searchable
+o Added clean ID memory methods inside immlib
+o Added Stack analize library (libstackanalize)
+o Fixed some memleak on Disasm
+o Fixed wrong arguments on Disasm operand
+o Improved Patch command
+o Safeseh moved into a PyCommand
+
+New Scripts:
+
+o searchcrypt PyCommand
+o stackvars PyCommand
+o search PyCommand
+
+Bug Fixes:
+
+o Solved 'ij' issue inside attach window
+o Fixed VCG parser (Blocks display fully address now)
+o Fixed traceback error when trying to graph and no attached
+o Fixed printfloat() format error 
+o Fixed ret value of Getaddrfromexp in case of non-existand expression
+
+
+1.0 Build 42 
+August 1, 2007
+
+o Released as product
+o Includes:
+	o Full Python API:
+		- immlib (main lib)
+                - internals
+                - immutils
+		- debugtypes
+	        - libdatatype
+                - libanalize
+                - libhook
+                - libevent
+                - 
+libheap
+                - pelib
+		- immvcglib   
+                - graphclass
+                 
+	o Command Box (with remote listener + command line client)
+	o Python Orthogonal Drawing
+	o Examples for PyCommands/PyHooks/PyScripts
+        o Ready to use PyCommands/PyHooks:
+
+	chunkanalizehook	Analize a Specific Chunk at a specific moment
+	cmpmem                  Compare memory with a file (file been a dump from prettyhexprint)
+	dependencies            Find a exported function on the loaded dll
+	duality                 Looks for mapped address that can be 'transformed' into opcodes
+	findantidep             Find address to bypass software DEP
+	finddatatype            funsniff
+	funsniff                funsniff
+	getevent                Get a log of current debugevent
+	getrpc                  Get the RPC information of a loaded dll
+	heap                    Immunity Heap Dump
+	hippie                  Syscall Fuzzer
+	hookheap                - DESC is not defined for this command -
+	list                    List PyCommands
+	lookaside               - DESC is not defined for this command -
+	mark                    Static Analysis: Mark the tiny ones
+	modptr                  !modptr Patch all Function Pointers and detect when they triggered
+	openfile                Open a File
+	patch                   Patches anti-debugging protection  ,  [-t TYPE_OF_PROTECTION]
+	pyexec                  Non interactive python shell [immlib already imported]
+	searchcode              Search code in memory
+	searchheap              Search the heap for specific chunks
+	safeseh                 Show exceptions handlers registered with SEH
+	pe_export               Export Module
+
+
+	o Lib references and Documentation
